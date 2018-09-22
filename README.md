@@ -1,7 +1,7 @@
 # SlotBot
 
 
-So it turns out that there's a game on a specific brand of old UK trivia machine that's basically like an extreme version of Trivial Pursuit.
+So it turns out that there's a game on a specific brand of old (out of service) UK trivia machine that's basically like an extreme version of Trivial Pursuit.
 
 
 Here's the pipeline:
