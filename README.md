@@ -29,7 +29,7 @@ So, we need to use the information provided by the answers to help identify whic
 
 The two basic ingredients of this search will be (i) a way to compare two strings for similarity; and, using this, (ii) a metric to rank similarity between imperfectly observed question/answer pairs and true samples from the database.
 
-We use the [Levenschtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) to define the similarity between two strings, defined as the minimum number of edits needed to change one string into another. Since a longer string tends to accumulate more reading errors, we'll normalize the Levenschtein distance over its length.
+We use the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) to define the similarity between two strings, defined as the minimum number of edits needed to change one string into another. Since a longer string tends to accumulate more reading errors, we'll normalize the Levenschtein distance over its length.
 
 We form a confusion matrix of OCR answers against database answers. Taking the Frobenius inner product between this and every 4-D [permutation matrix](https://en.wikipedia.org/wiki/Permutation_matrix) will give us the metric we need. We can brute-force search over this to find the correct answer. The intuition behind this algorithm is that we're taking the dot product between the observed confusion matrix (which is noisy due to poor observability), and idealized confusion matrices (assuming perfect observability). The idealized confusion matrices take the form of permutation matrices because the four answers can appear in any permutation.
 
